@@ -24,7 +24,7 @@ The goals / steps of this project are the following:
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
 My pipeline consisted of 5 steps. First, I converted the images to grayscale, 
-![gray][test_images_output/solidWhiteCurve.jpg-grey.png]
+![gray](test_images_output/solidWhiteCurve.jpg-grey.png)
 
 then I blurred the heck out of them with Gaussian blur. I found a setting of 25 gets the most noise out while leaving in the lines you need. 
 ![gauss][test_images_output/solidWhiteCurve.jpg-gauss.png]
