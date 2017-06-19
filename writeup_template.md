@@ -24,22 +24,22 @@ The goals / steps of this project are the following:
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
 My pipeline consisted of 5 steps. First, I converted the images to grayscale, 
-![gray](test_images_output/solidWhiteCurve.jpg-grey.png)
+![gray][test_images_output/solidWhiteCurve.jpg-grey.png]
 
-Then I blurred the heck out of them with Gaussian blur. I found a setting of 25 gets the most noise out while leaving in the lines you need. 
-![gauss](test_images_output/solidWhiteCurve.jpg-gauss.png)
+then I blurred the heck out of them with Gaussian blur. I found a setting of 25 gets the most noise out while leaving in the lines you need. 
+![gauss][test_images_output/solidWhiteCurve.jpg-gauss.png]
 
 Next, I used the Canny transform to determine where the edge points of the lines were. Canny uses a form of differential calculation to determine which points are edges. Settings of low=20 and high=40 were about all I could do and still get the proper lines out of the next step. 
-![Canny](test_images_output/solidWhiteCurve.jpg-canny.png)
+![Canny][test_images_output/solidWhiteCurve.jpg-canny.png]
 
 Then I masked off the area I was interested in, where I would find the lines. 
-![Masked](test_images_output/solidWhiteCurve.jpg-masked.png)
+![Masked][test_images_output/solidWhiteCurve.jpg-masked.png]
 
 The Next step was to use the Hough transform algorithm to make lines out of the points. Hough transforms point x and y coordinates to rho and theta. Lines of points will have similar theta and rho values. I set the threshold for theta at 20, which gave me a good set of edge lines. 
-![Hough](test_images_output/solidWhiteCurve.jpg-hough.png)
+![Hough][test_images_output/solidWhiteCurve.jpg-hough.png]
 
 Lastly, I painted my caluclated lines onto the final image. 
-![Final](test_images_output/solidWhiteCurve.jpg-final.png)
+![Final][test_images_output/solidWhiteCurve.jpg-final.png]
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 ... ignoring slope to start with. I got lines with infinite slope on occasion, and that caused thrown exceptions. Also, I don't believe that slope will be completely useful around curves. 
